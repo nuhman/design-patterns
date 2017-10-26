@@ -1,4 +1,4 @@
-var names = ["KITTY", "BILLY", "ROBERTS", "ALEXIS"]
+var names = ["KITTY", "BILLY", "ROBERTS", "ALEXIS"];
 
 // HTML IDs looks like this img1, img2, ... , score1, score2,... , name1, name2, ....
 var tags = names.map( (name, index) => {
