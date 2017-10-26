@@ -8,10 +8,10 @@ $(function(){
     cats: [],   
 
     imageUrls: [
-      'https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0',
-      'https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0',
-      'https://cdn.pixabay.com/photo/2016/04/16/23/07/cat-1333926_960_720.jpg',
-      'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_960_720.jpg'
+      'images/kitty.jpg',
+      'images/billy.jpg',
+      'images/alexis.jpg',
+      'images/roberts.jpg'      
     ],
 
     init(){
