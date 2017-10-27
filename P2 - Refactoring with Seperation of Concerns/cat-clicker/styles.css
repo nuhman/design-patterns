@@ -79,3 +79,18 @@ body{
 .hidden{
   display: none;
 }
+.admin{  
+  max-width: 25%;
+  padding: 0.5em;  
+  color: #000;
+}
+.btn-admin{
+  background: #e74c3c;
+  width: 7em;
+  margin: 0.3em;
+  color: #fff;
+}
+.admin-options{
+  margin-top: 2em;    
+  padding: 0.5em;
+}
