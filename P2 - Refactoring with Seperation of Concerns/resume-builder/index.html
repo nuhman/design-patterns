@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">  
+  <title>Resume</title>  
+  <link href="css/style.css" rel="stylesheet">
+  <!--<script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCOifcgQdIBYzCnoTmhZDk45JZQA7ferOo"></script>-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    #maps {
+        height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">    
+
+    <div id="header" class="center-content clear-fix">      
+      <ul id="topContacts" class="flex-box"></ul>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div id="workExperience" class="gray">
+      <h2>Work Experience</h2>
+    </div>
+
+    <div id="projects">
+      <h2>Projects</h2>
+    </div>
+
+    <div id="education" class="gray">
+      <h2>Education</h2>
+    </div>
+
+    <div id="maps">
+      <h2>Where I've Lived and Worked</h2>
+    </div>
+
+    <div id="lets-connect" class="dark-gray">
+      <h2 class="orange center-text">Let's Connect</h2>
+        <ul id="footerContacts" class="flex-box">
+      </ul>
+    </div>
+
+  </div> <!--  main endds -->
+     
+  
+  <script src="js/jQuery.js"></script>  
+  <script src="js/resumeBuilder.js"></script>
+  <script>
+   var map;
+   var infowindow;
+
+   function initMap() {
+     
+     var pyrmont = {lat: -33.867, lng: 151.195};
+
+     map = new google.maps.Map(document.getElementById('maps'), {
+       center: pyrmont,
+       zoom: 15
+     });
+
+     infowindow = new google.maps.InfoWindow();
+     var service = new google.maps.places.PlacesService(map);
+     service.nearbySearch({
+       location: pyrmont,
+       radius: 500,
+       type: ['store']
+     }, callback);
+   }
+
+   function callback(results, status) {
+     if (status === google.maps.places.PlacesServiceStatus.OK) {
+       for (var i = 0; i < results.length; i++) {
+         createMarker(results[i]);
+       }
+     }
+   }
+
+   function createMarker(place) {
+     var placeLoc = place.geometry.location;
+     var marker = new google.maps.Marker({
+       map: map,
+       position: place.geometry.location
+     });
+
+     google.maps.event.addListener(marker, 'click', function() {
+       infowindow.setContent(place.name);
+       infowindow.open(map, this);
+     });
+   }    
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOifcgQdIBYzCnoTmhZDk45JZQA7ferOo&&libraries=places&callback=initMap" async defer></script> 
+</body>
+</html>
